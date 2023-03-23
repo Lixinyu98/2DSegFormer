@@ -1,8 +1,3 @@
-# ---------------------------------------------------------------
-# Copyright (c) 2021, NVIDIA Corporation. All rights reserved.
-#
-# This work is licensed under the NVIDIA Source Code License
-# ---------------------------------------------------------------
 import numpy as np
 import torch.nn as nn
 import torch
@@ -132,11 +127,10 @@ class UHead(BaseDecodeHead):
         self.linear_pred = nn.Conv2d(embedding_dim, self.num_classes, kernel_size=1)
 
     def forward(self, inputs):
-        x = self._transform_inputs(inputs)  # len=4, 1/4,1/8,1/16,1/32
+        x = self._transform_inputs(inputs)
         c1, c2, c3, c4 = x
         c3 = self.db3(c3)
         c4 = self.db4(c4)
-        ############## MLP decoder on C1-C4 ###########
         n, _, h, w = c4.shape
 
         _c4 = self.linear_c4(c4).permute(0, 2, 1).reshape(n, -1, c4.shape[2], c4.shape[3])
