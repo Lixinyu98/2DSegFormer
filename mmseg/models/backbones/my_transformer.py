@@ -429,7 +429,6 @@ class MyTransformer(nn.Module):
         l1 = position(H, W, 8, std=0.5)
         for i, blk in enumerate(self.block1):
             x = blk(x, H, W, l1)
-
         x = self.norm1(x)
         x = x.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x)
@@ -439,7 +438,6 @@ class MyTransformer(nn.Module):
         l2 = position(H, W, 4, std=0.5)
         for i, blk in enumerate(self.block2):
             x = blk(x, H, W, l2)
-            # x = blk(x, H, W)
         x = self.norm2(x)
         x = x.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x)
@@ -471,7 +469,7 @@ class MyTransformer(nn.Module):
 class DWConv(nn.Module):
     def __init__(self, dim=768):
         super(DWConv, self).__init__()
-        self.dwconv = nn.Conv2d(dim, dim, 3, 1, 1, bias=True, groups=dim)#groups的值必须能整除in_channels和out_channels
+        self.dwconv = nn.Conv2d(dim, dim, 3, 1, 1, bias=True, groups=dim)
 
     def forward(self, x, H, W):
         B, N, C = x.shape
