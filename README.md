@@ -8,7 +8,7 @@
   Figure 1:  Overall architecture of 2DSegFormer.
 </p>
 
-### [Project page](https://github.com/LDD2020/2DSegFormer) | [Paper](https://ieeexplore.ieee.org/document/9955997)
+### [Project page](https://github.com/Lixinyu98/2DSegFormer) | [Paper](https://ieeexplore.ieee.org/document/9955997)
 
 2DSegFormer: 2-D Transformer Model for Semantic Segmentation on Aerial Images.<br>
 Xinyu Li, Yu Cheng, Yi Fang, Hongmei Liang and Shaoqiu Xu.<br>
