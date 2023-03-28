@@ -37,13 +37,13 @@ License under an MIT license.
 ## Citation
 If you find the code or trained models useful, please consider citing:
 ```
-@article{li20222dsegformer,
-  title={2DSegFormer: 2-D Transformer Model for Semantic Segmentation on Aerial Images},
+@ARTICLE{9955997,
   author={Li, Xinyu and Cheng, Yu and Fang, Yi and Liang, Hongmei and Xu, Shaoqiu},
-  journal={IEEE Transactions on Geoscience and Remote Sensing},
-  volume={60},
-  pages={1--13},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={2DSegFormer: 2-D Transformer Model for Semantic Segmentation on Aerial Images}, 
   year={2022},
-  publisher={IEEE}
-}
+  volume={60},
+  number={},
+  pages={1-13},
+  doi={10.1109/TGRS.2022.3223416}}
 ```
